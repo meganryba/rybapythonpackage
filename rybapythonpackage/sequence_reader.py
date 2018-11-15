@@ -1,10 +1,10 @@
 import dendropy
 import os.path
 
-def sequence_reader("../data/full_plethodon_alignment.phy"):
-    assert os.path.exists("../data/full_plethodon_alignment.phy")
+def sequence_reader(filepath):
+    assert os.path.exists(filepath)
     sequence_set = dendropy.DnaCharacterMatrix.get(
-        path="../data/full_plethodon_alignment.phy",
+        path=filepath,
         schema="phylip"
 )
     assert type(sequence_set) == dendropy.datamodel.charmatrixmodel.DnaCharacterMatrix
